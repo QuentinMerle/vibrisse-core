@@ -1,0 +1,19 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "vibrisse/faq",
+  "title": "FAQ",
+  "description": "Questions fréquentes en accordéon natif HTML (details/summary). Zéro JS.",
+  "category": "layout",
+  "icon": "editor-help",
+  "keywords": ["faq", "accordion", "questions", "vibrisse"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php"
+  },
+  "supports": {
+    "align": ["wide"],
+    "anchor": true,
+    "jsx": true
+  },
+  "style": "file:./style.css"
+}

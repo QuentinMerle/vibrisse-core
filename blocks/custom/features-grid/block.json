@@ -1,0 +1,19 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "vibrisse/features-grid",
+  "title": "Features Grid",
+  "description": "Grille d'arguments ou de services. Contenu répétable via ACF.",
+  "category": "layout",
+  "icon": "grid-view",
+  "keywords": ["features", "grid", "services", "cards", "vibrisse"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php"
+  },
+  "supports": {
+    "align": ["wide", "full"],
+    "anchor": true,
+    "jsx": true
+  },
+  "style": "file:./style.css"
+}

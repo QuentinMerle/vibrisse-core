@@ -1,0 +1,25 @@
+{
+    "key": "group_vibrisse_testimonials",
+    "title": "Block: Testimonials",
+    "fields": [
+        { "key": "field_vibrisse_testi_section_title", "label": "Titre de section", "name": "section_title", "type": "text" },
+        {
+            "key": "field_vibrisse_testi_items",
+            "label": "Témoignages",
+            "name": "items",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Ajouter un témoignage",
+            "sub_fields": [
+                { "key": "field_vibrisse_testi_item_quote", "label": "Citation", "name": "quote", "type": "textarea", "rows": 3 },
+                { "key": "field_vibrisse_testi_item_author_name", "label": "Nom", "name": "author_name", "type": "text", "wrapper": {"width": "40"} },
+                { "key": "field_vibrisse_testi_item_author_role", "label": "Rôle / Entreprise", "name": "author_role", "type": "text", "wrapper": {"width": "40"} },
+                { "key": "field_vibrisse_testi_item_avatar", "label": "Avatar", "name": "avatar", "type": "image", "return_format": "array", "wrapper": {"width": "20"} }
+            ]
+        }
+    ],
+    "location": [[{"param": "block", "operator": "==", "value": "vibrisse/testimonials"}]],
+    "active": true,
+    "show_in_rest": 1,
+    "modified": 1720410400
+}

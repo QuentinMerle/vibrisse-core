@@ -1,0 +1,19 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "vibrisse/hero",
+  "title": "Hero",
+  "description": "Section d'introduction principale. Titre, sous-titre, CTA et média.",
+  "category": "layout",
+  "icon": "cover-image",
+  "keywords": ["hero", "banner", "header", "vibrisse"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php"
+  },
+  "supports": {
+    "align": ["full"],
+    "anchor": true,
+    "jsx": true
+  },
+  "style": "file:./style.css"
+}

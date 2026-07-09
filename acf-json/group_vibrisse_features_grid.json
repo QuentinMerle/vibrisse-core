@@ -1,0 +1,24 @@
+{
+    "key": "group_vibrisse_features_grid",
+    "title": "Block: Features Grid",
+    "fields": [
+        { "key": "field_vibrisse_fg_section_title", "label": "Titre de section", "name": "section_title", "type": "text" },
+        {
+            "key": "field_vibrisse_fg_items",
+            "label": "Arguments",
+            "name": "items",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Ajouter un argument",
+            "sub_fields": [
+                { "key": "field_vibrisse_fg_item_icon", "label": "Icône (SVG inline)", "name": "icon", "type": "textarea", "rows": 3, "wrapper": {"width": "20"} },
+                { "key": "field_vibrisse_fg_item_title", "label": "Titre", "name": "title", "type": "text", "wrapper": {"width": "40"} },
+                { "key": "field_vibrisse_fg_item_description", "label": "Description", "name": "description", "type": "textarea", "rows": 3, "wrapper": {"width": "40"} }
+            ]
+        }
+    ],
+    "location": [[{"param": "block", "operator": "==", "value": "vibrisse/features-grid"}]],
+    "active": true,
+    "show_in_rest": 1,
+    "modified": 1720410100
+}

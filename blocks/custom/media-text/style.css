@@ -1,0 +1,8 @@
+/* 
+ * Styling spécifique au bloc Media & Text.
+ * La majorité du design (spacing, couleurs, typo) est gérée dynamiquement par Tailwind v4 dans le render.php.
+ */
+.vibrisse-media-text {
+	/* Ajoutez des micro-interactions CSS pures ("Delight") ici si besoin */
+    transition: opacity 0.3s ease;
+}

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibrisse Core — The AI-Ready WordPress Starter Theme</title>
+    
+    <!-- Standard SEO & GEO Meta Tags -->
+    <meta name="description" content="Vibrisse Core is an uncompromising, naked WordPress Starter Theme for agencies. Built with FSE, ACF Pro, and Tailwind v4, engineered specifically for AI hydration and DA to Dev workflows.">
+    <meta name="keywords" content="WordPress Starter Theme, AI WordPress Theme, FSE, ACF Pro Blocks, Tailwind CSS v4, Vite WordPress, Agency Theme, Copilot WordPress">
+    <meta name="author" content="Vibrisse Studio">
+    <link rel="canonical" href="https://core.vibrisse-studio.dev/">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://core.vibrisse-studio.dev/">
+    <meta property="og:title" content="Vibrisse Core — The AI-Ready WordPress Starter Theme">
+    <meta property="og:description" content="Zero bloat. Zero hard-coded styles. An open-source WP theme engineered for Artificial Intelligence and strict Agency workflows.">
+    <meta property="og:image" content="https://www.vibrisse-studio.dev/og-image.jpg"> <!-- Fallback on Studio OG image -->
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Vibrisse Core — Naked AI-Ready WP Theme">
+    <meta name="twitter:description" content="An uncompromising WordPress Starter Theme engineered for AI hydration.">
+
+    <!-- JSON-LD Structured Data for GEO (Generative Engine Optimization) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Vibrisse Core",
+      "operatingSystem": "WordPress 6.4+",
+      "applicationCategory": "DeveloperApplication",
+      "description": "An open-source, naked WordPress Starter Theme built for agencies. Features FSE, ACF Pro block architecture, Tailwind v4, and Vite, heavily optimized for AI code generation.",
+      "url": "https://core.vibrisse-studio.dev/",
+      "softwareVersion": "1.0",
+      "author": {
+        "@type": "Organization",
+        "name": "Vibrisse Studio",
+        "url": "https://www.vibrisse-studio.dev/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --grid-color: rgba(0, 0, 0, 0.05);
+            --border-color: #000;
+        }
+        body {
+            font-family: 'Geist', -apple-system, sans-serif;
+            background-color: #fff;
+            color: #000;
+            -webkit-font-smoothing: auto;
+            background-image: linear-gradient(to right, var(--grid-color) 1px, transparent 1px), linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+            background-size: 2rem 2rem;
+            background-position: center top;
+        }
+        code, .font-mono { font-family: 'Geist Mono', monospace; }
+        
+        .brutal-border { border: 1px solid var(--border-color); }
+        .brutal-border-b { border-bottom: 1px solid var(--border-color); }
+        .brutal-border-r { border-right: 1px solid var(--border-color); }
+        .brutal-border-t { border-top: 1px solid var(--border-color); }
+        
+        .hover-invert:hover { background-color: #000; color: #fff; }
+
+        /* Animation classes for the interactive chat */
+        .chat-msg {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            display: none;
+        }
+        .chat-msg.revealed {
+            display: flex;
+        }
+        .chat-msg.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .typing-indicator {
+            display: inline-block;
+            width: 8px;
+            height: 16px;
+            background-color: #4ade80; /* green-400 */
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink { 50% { opacity: 0; } }
+    </style>
+</head>
+<body class="min-h-screen p-4 md:p-8">
+
+    <div class="max-w-screen-2xl mx-auto bg-white brutal-border shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] flex flex-col">
+
+        <!-- Header -->
+        <header class="grid grid-cols-1 md:grid-cols-12 brutal-border-b bg-white sticky top-0 z-50">
+            <div class="md:col-span-8 p-4 md:p-6 brutal-border-b md:brutal-border-b-0 md:brutal-border-r font-mono font-bold uppercase text-lg lg:text-xl flex items-center bg-black text-white">
+                [ VIBRISSE CORE ] — NAKED & AI-READY
+            </div>
+            <nav class="md:col-span-4 flex items-stretch font-mono text-sm uppercase divide-x divide-black">
+                <a href="https://github.com/QuentinMerle/vibrisse-core" target="_blank" class="flex-1 p-4 md:p-6 flex items-center justify-center hover-invert transition-none">GitHub ↗</a>
+                <a href="https://www.vibrisse-studio.dev/" target="_blank" class="flex-1 p-4 md:p-6 flex items-center justify-center hover-invert transition-none hidden sm:flex">Studio ↗</a>
+            </nav>
+        </header>
+
+        <!-- Hero -->
+        <main class="flex-grow flex flex-col">
+            <section class="grid grid-cols-1 lg:grid-cols-12 brutal-border-b">
+                <div class="lg:col-span-8 p-8 md:p-16 lg:p-24 lg:brutal-border-r flex flex-col justify-center">
+                    <div class="inline-block bg-black text-white px-3 py-1 font-mono text-sm mb-8 w-max uppercase tracking-widest">
+                        Status: V1 Stable
+                    </div>
+                    <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-none mb-8">
+                        IT SHIPS NAKED.
+                    </h1>
+                    <p class="text-xl md:text-3xl font-medium tracking-tight text-gray-700 max-w-2xl leading-snug">
+                        Built for a DA → Dev → Delivery workflow.<br>
+                        Zero bloat. Zero hard-coded styles.
+                    </p>
+                </div>
+                
+                <div class="lg:col-span-4 bg-gray-50 flex flex-col">
+                    <div class="p-6 md:p-8 brutal-border-b font-mono text-sm uppercase text-gray-500 tracking-widest bg-white">
+                        [ Quick Start ]
+                    </div>
+                    <div class="p-6 md:p-8 font-mono text-sm leading-relaxed overflow-x-auto flex-grow flex flex-col justify-center bg-black text-white">
+                        <span class="text-gray-500 mb-2 block">/* Clone the skeleton */</span>
+                        <div class="mb-6">
+                            <span class="text-green-400">git</span> clone https://github.com/QuentinMerle/vibrisse-core.git wp-content/themes/vibrisse-core
+                        </div>
+                        <span class="text-gray-500 mb-2 block">/* Build the engine */</span>
+                        <div>
+                            <span class="text-green-400">cd</span> wp-content/themes/vibrisse-core<br>
+                            <span class="text-green-400">npm</span> install && <span class="text-green-400">npm</span> run dev
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Philosophy & AI Constraints -->
+            <section class="grid grid-cols-1 md:grid-cols-12 brutal-border-b">
+                <div class="md:col-span-6 p-8 md:p-16 md:brutal-border-r">
+                    <h2 class="text-3xl lg:text-5xl font-bold tracking-tight mb-8">
+                        The AI dresses it up.
+                    </h2>
+                    <p class="text-lg leading-relaxed mb-6 font-medium">
+                        <code class="bg-black text-white px-1">vibrisse-core</code> is deliberately incomplete. It's a skeleton engineered for Artificial Intelligence.
+                    </p>
+                    <p class="text-lg leading-relaxed mb-6">
+                        We banned React Native Gutenberg. We banned page builders. 
+                        The Core provides the strict boundaries: Vite, Tailwind v4, ACF Pro, and native HTML architecture.
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        The AI (Cursor, Copilot, or our own Agent) reads the included <code class="bg-gray-100 px-1 font-mono text-sm border border-black">.ai/AGENTS.md</code> files, understands your project's constraints, and generates compliant business blocks in seconds.
+                    </p>
+                </div>
+                <div class="md:col-span-6 flex flex-col bg-gray-50">
+                    <div class="p-6 md:p-8 brutal-border-b font-mono text-sm uppercase text-gray-500 tracking-widest bg-white">
+                        [ The Guardrails ]
+                    </div>
+                    <div class="flex-grow p-8 md:p-16 flex flex-col justify-center">
+                        <ul class="space-y-6 font-mono text-sm md:text-base">
+                            <li class="flex items-start">
+                                <span class="mr-4 bg-black text-white px-2 py-0.5">1</span>
+                                <div><strong>Zero Native Gutenberg React.</strong> Use exclusively ACF Blocks architecture.</div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-4 bg-black text-white px-2 py-0.5">2</span>
+                                <div><strong>Zero hard-coded colors.</strong> Everything routes through <code class="bg-gray-200 px-1">theme.json</code>.</div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-4 bg-black text-white px-2 py-0.5">3</span>
+                                <div><strong>Web-First Principle.</strong> Native HTML/CSS APIs > External libraries.</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- IDE Chat Log Proof -->
+            <section class="grid grid-cols-1 lg:grid-cols-12 brutal-border-b bg-gray-50" id="chat-section">
+                <div class="lg:col-span-12 p-6 md:p-8 brutal-border-b font-mono text-sm uppercase text-gray-500 tracking-widest bg-white flex justify-between items-center">
+                    <span>[ Proof of Concept: IDE Chat Log ]</span>
+                    <button id="replay-chat" class="hidden md:block bg-black text-white px-3 py-1 text-xs hover-invert cursor-pointer">↻ REPLAY</button>
+                </div>
+                <div class="lg:col-span-12 p-4 md:p-12 lg:p-16 flex justify-center bg-[#f0f0f0]">
+                    <div class="w-full max-w-5xl bg-[#0d1117] brutal-border shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] flex flex-col font-mono text-sm md:text-base">
+                        <!-- Chat Header -->
+                        <div class="brutal-border-b p-4 text-gray-500 flex items-center space-x-2 bg-black">
+                            <div class="w-3 h-3 rounded-full bg-red-500 border border-white/20"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500 border border-white/20"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500 border border-white/20"></div>
+                            <span class="ml-4 uppercase tracking-widest text-xs">Vibrisse Agent / Cursor Terminal</span>
+                        </div>
+                        
+                        <!-- Chat Messages Container -->
+                        <div id="chat-container" class="p-6 md:p-10 space-y-8 text-gray-300 md:h-[40rem] overflow-y-auto relative">
+                            
+                            <!-- Msg 1: User -->
+                            <div class="chat-msg flex-col items-end">
+                                <div class="bg-blue-900/30 border border-blue-500/50 text-blue-100 p-4 max-w-[90%] md:max-w-[75%]">
+                                    <span class="text-blue-400 font-bold block mb-2 text-xs uppercase tracking-widest">User</span>
+                                    Read the <code class="bg-black/50 px-1 text-white border border-blue-500/30">.ai/</code> context files. What are your operational constraints for this WordPress project?
+                                </div>
+                            </div>
+                            
+                            <!-- Msg 2: AI -->
+                            <div class="chat-msg flex-col items-start">
+                                <div class="bg-white/5 border border-white/20 p-4 md:p-6 max-w-[95%] md:max-w-[85%] shadow-lg">
+                                    <span class="text-green-400 font-bold block mb-4 text-xs uppercase tracking-widest flex items-center"><span class="mr-2">⚡</span> Vibrisse AI</span>
+                                    <p class="mb-4">I have analyzed <code class="bg-black px-1.5 py-0.5 text-white border border-white/20">AGENTS.md</code> and <code class="bg-black px-1.5 py-0.5 text-white border border-white/20">CONTEXT.md</code>. My operational guardrails are incredibly strict:</p>
+                                    <ul class="space-y-4 mb-4">
+                                        <li><span class="text-yellow-400">Architecture:</span> Zero native Gutenberg React. I must exclusively use the ACF Blocks architecture and enforce Local JSON syncing.</li>
+                                        <li><span class="text-yellow-400">Design System:</span> I am forbidden from using hard-coded hex colors or fonts. Every style must route through <code class="bg-black px-1 text-white border border-white/20">theme.json</code> and Tailwind classes.</li>
+                                        <li><span class="text-yellow-400">Web-First Principle:</span> Before suggesting heavy JS libraries, I must use native HTML APIs (<code class="bg-black px-1 text-white border border-white/20">&lt;details&gt;</code>, <code class="bg-black px-1 text-white border border-white/20">&lt;dialog&gt;</code>).</li>
+                                    </ul>
+                                    <p class="text-gray-400 italic border-l-2 border-gray-600 pl-3">Under these constraints, I am physically unable to generate "junk AI code". I am locked into your production-ready standards.</p>
+                                </div>
+                            </div>
+
+                            <!-- Msg 3: User -->
+                            <div class="chat-msg flex-col items-end">
+                                <div class="bg-blue-900/30 border border-blue-500/50 text-blue-100 p-4 max-w-[90%] md:max-w-[75%]">
+                                    <span class="text-blue-400 font-bold block mb-2 text-xs uppercase tracking-widest">User</span>
+                                    Understood. Now, generate a 'Team Member' block. We need a photo, name, role, and a repeater for social links.
+                                </div>
+                            </div>
+
+                            <!-- Msg 4: AI -->
+                            <div class="chat-msg flex-col items-start">
+                                <div class="bg-white/5 border border-white/20 p-4 md:p-6 max-w-[95%] md:max-w-[85%] shadow-lg">
+                                    <span class="text-green-400 font-bold block mb-4 text-xs uppercase tracking-widest flex items-center"><span class="mr-2">⚡</span> Vibrisse AI</span>
+                                    <p class="mb-4 text-gray-400">Executing <code class="text-gray-300">new-block</code> skill strictly following guidelines...</p>
+                                    <ul class="space-y-2 mb-4 font-mono text-sm">
+                                        <li class="flex items-start"><span class="text-green-400 mr-2">✔</span> <div>Created <code class="bg-black px-1 text-white border border-white/20">blocks/custom/team-member/block.json</code></div></li>
+                                        <li class="flex items-start"><span class="text-green-400 mr-2">✔</span> <div>Created <code class="bg-black px-1 text-white border border-white/20">render.php</code> using semantic <code class="text-yellow-400">&lt;article&gt;</code> tag and <code class="text-yellow-400">wp_get_attachment_image()</code> for lazy loading.</div></li>
+                                        <li class="flex items-start"><span class="text-green-400 mr-2">✔</span> <div>Created <code class="bg-black px-1 text-white border border-white/20">style.css</code> mapping BEM classes to Tailwind CSS variables.</div></li>
+                                        <li class="flex items-start"><span class="text-green-400 mr-2">✔</span> <div>Generated <code class="bg-black px-1 text-white border border-white/20">acf-json/group_team_member.json</code> with the requested Repeater field.</div></li>
+                                    </ul>
+                                    <p class="border-l-2 border-green-500 pl-3">The block is automatically registered and restricted to your <code class="bg-black px-1 text-white border border-white/20">theme.json</code> color palette. It is ready for the Gutenberg editor.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Anchor for auto-scroll -->
+                            <div id="chat-anchor"></div>
+                        </div>
+                        
+                        <!-- Input Mockup -->
+                        <div class="brutal-border-t p-4 md:p-6 flex items-center bg-black">
+                            <span class="text-green-400 mr-4 font-bold">❯</span>
+                            <span id="typing-text" class="text-gray-400"></span><span class="typing-indicator"></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AI Skills in Action -->
+            <section class="grid grid-cols-1 lg:grid-cols-12 brutal-border-b bg-gray-50">
+                <div class="lg:col-span-12 p-6 md:p-8 brutal-border-b font-mono text-sm uppercase text-gray-500 tracking-widest bg-white">
+                    [ Workflow Automation ]
+                </div>
+                <div class="lg:col-span-4 p-8 md:p-12 brutal-border-b lg:brutal-border-b-0 lg:brutal-border-r bg-white hover:bg-black hover:text-white transition-colors duration-0 group">
+                    <h3 class="font-bold text-xl mb-4 group-hover:text-green-400">1. Design Hydration</h3>
+                    <p class="text-sm font-mono leading-relaxed">The DA delivers a Figma file. Trigger the AI to analyze the assets and instantly update <code class="bg-gray-100 group-hover:bg-white/20 px-1 border border-black group-hover:border-white">theme.json</code> and <code class="bg-gray-100 group-hover:bg-white/20 px-1 border border-black group-hover:border-white">CLIENT.md</code>. Zero manual CSS variables.</p>
+                </div>
+                <div class="lg:col-span-4 p-8 md:p-12 brutal-border-b lg:brutal-border-b-0 lg:brutal-border-r bg-white hover:bg-black hover:text-white transition-colors duration-0 group">
+                    <h3 class="font-bold text-xl mb-4 group-hover:text-green-400">2. Block Generation</h3>
+                    <p class="text-sm font-mono leading-relaxed">Need a custom block? "Create a Team block". The AI generates <code class="bg-gray-100 group-hover:bg-white/20 px-1 border border-black group-hover:border-white">block.json</code>, PHP render, styles, and the ACF Local JSON group instantly.</p>
+                </div>
+                <div class="lg:col-span-4 p-8 md:p-12 bg-white hover:bg-black hover:text-white transition-colors duration-0 group">
+                    <h3 class="font-bold text-xl mb-4 group-hover:text-green-400">3. Smart Scaffolding</h3>
+                    <p class="text-sm font-mono leading-relaxed">Run the <code class="bg-gray-100 group-hover:bg-white/20 px-1 border border-black group-hover:border-white">new-cpt</code> skill to generate a Custom Post Type, its Taxonomies, ACF relationships, and Full Site Editing HTML templates.</p>
+                </div>
+            </section>
+
+            <!-- Universal Blocks & Predeploy -->
+            <section class="grid grid-cols-1 lg:grid-cols-12 brutal-border-b bg-black text-white">
+                <div class="lg:col-span-4 p-8 md:p-12 brutal-border-b lg:brutal-border-b-0 lg:brutal-border-r border-white/20 flex flex-col justify-center">
+                    <h3 class="font-mono text-sm uppercase tracking-widest text-gray-400 mb-6">[ UNIVERSAL BLOCKS ]</h3>
+                    <p class="mb-6 font-medium text-lg leading-relaxed">The core covers 80% of brochure needs out of the box:</p>
+                    <ul class="font-mono text-sm space-y-3 text-gray-300">
+                        <li>+ Hero (Split & Centered)</li>
+                        <li>+ Media & Text</li>
+                        <li>+ Features Grid</li>
+                        <li>+ Call to Action</li>
+                        <li>+ Native HTML FAQ (Zero JS)</li>
+                        <li>+ Testimonials</li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-8 p-8 md:p-12 flex flex-col justify-center">
+                    <h3 class="font-mono text-sm uppercase tracking-widest text-gray-400 mb-6">[ PREDEPLOY PIPELINE ]</h3>
+                    <h2 class="text-3xl lg:text-5xl font-bold tracking-tight mb-6">You don't ship until it's perfect.</h2>
+                    <p class="text-gray-300 text-lg mb-8 leading-relaxed">Running <code class="bg-white/10 px-1 font-mono text-sm border border-white/20">npm run predeploy</code> chains our strict quality contract before pushing to production:</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 font-mono text-sm">
+                        <div class="border border-white/20 p-4">1. Build & Optimize (Vite)</div>
+                        <div class="border border-white/20 p-4">2. Lint (ESLint + Stylelint)</div>
+                        <div class="border border-white/20 p-4">3. WP-CLI validation (ACF JSON)</div>
+                        <div class="border border-white/20 p-4 text-green-400">4. Auto-generate llms.txt</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- The Stack Grid -->
+            <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 bg-white">
+                <div class="p-8 brutal-border-b sm:brutal-border-b-0 sm:brutal-border-r flex flex-col items-center text-center">
+                    <div class="font-mono text-xs uppercase text-gray-500 mb-2">CMS Engine</div>
+                    <div class="font-bold text-xl">WP 6.4+ (FSE)</div>
+                </div>
+                <div class="p-8 brutal-border-b sm:brutal-border-b-0 md:brutal-border-r flex flex-col items-center text-center">
+                    <div class="font-mono text-xs uppercase text-gray-500 mb-2">Architecture</div>
+                    <div class="font-bold text-xl">ACF Pro + JSON</div>
+                </div>
+                <div class="p-8 brutal-border-b sm:brutal-border-b-0 sm:brutal-border-r flex flex-col items-center text-center">
+                    <div class="font-mono text-xs uppercase text-gray-500 mb-2">Design System</div>
+                    <div class="font-bold text-xl">Tailwind v4</div>
+                </div>
+                <div class="p-8 flex flex-col items-center text-center">
+                    <div class="font-mono text-xs uppercase text-gray-500 mb-2">Build Tool</div>
+                    <div class="font-bold text-xl">Vite 6 HMR</div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="grid grid-cols-1 md:grid-cols-12 brutal-border-t font-mono text-xs uppercase bg-black text-white">
+            <div class="md:col-span-6 p-6 md:brutal-border-r border-white/20 flex flex-col sm:flex-row justify-between">
+                <span>&copy; VIBRISSE CORE. MIT LICENSE.</span>
+                <a href="https://github.com/QuentinMerle/vibrisse-core" target="_blank" class="mt-2 sm:mt-0 text-gray-400 hover:text-white transition-colors duration-200">Open source, feel free to contribute ↗</a>
+            </div>
+            <div class="md:col-span-6 p-6 flex flex-col md:flex-row justify-between items-start md:items-center space-y-4 md:space-y-0">
+                <div class="flex space-x-6">
+                    <a href="https://www.vibrisse-studio.dev/" target="_blank" class="hover:underline">Built by Studio</a>
+                    <a href="https://ai-quest.dev/" target="_blank" class="hover:underline text-green-400">Learn AI Quest</a>
+                </div>
+                <div class="text-gray-500">BEAUCE, QC 🇨🇦</div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Interactive Chat Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const messages = document.querySelectorAll('.chat-msg');
+            const chatContainer = document.getElementById('chat-container');
+            const chatAnchor = document.getElementById('chat-anchor');
+            const typingText = document.getElementById('typing-text');
+            const replayBtn = document.getElementById('replay-chat');
+            
+            let hasPlayed = false;
+            let currentMsgIndex = 0;
+            let timeouts = [];
+
+            const delays = [800, 1500, 2500, 1500]; // Delays before showing msg 0, 1, 2, 3
+
+            function clearSequence() {
+                timeouts.forEach(clearTimeout);
+                timeouts = [];
+                messages.forEach(msg => {
+                    msg.classList.remove('revealed', 'visible');
+                });
+                typingText.textContent = "";
+                currentMsgIndex = 0;
+            }
+
+            function playSequence() {
+                clearSequence();
+                
+                const playNext = (index) => {
+                    if (index >= messages.length) {
+                        typingText.textContent = "Waiting for input...";
+                        return;
+                    }
+                    
+                    // Simulate typing for user messages (even index) or thinking for AI
+                    typingText.textContent = index % 2 === 0 ? "Typing..." : "Generating...";
+
+                    const t = setTimeout(() => {
+                        messages[index].classList.add('revealed');
+                        // Tiny delay to allow CSS transition to catch the display change
+                        setTimeout(() => {
+                            messages[index].classList.add('visible');
+                            chatAnchor.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        }, 50);
+                        typingText.textContent = "";
+                        playNext(index + 1);
+                    }, delays[index]);
+                    
+                    timeouts.push(t);
+                };
+
+                playNext(0);
+            }
+
+            // Intersection Observer to start animation when scrolling into view
+            const observer = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting && !hasPlayed) {
+                    hasPlayed = true;
+                    // Add slight delay before starting
+                    timeouts.push(setTimeout(playSequence, 500));
+                }
+            }, { threshold: 0.3 });
+
+            observer.observe(document.getElementById('chat-section'));
+
+            // Replay button logic
+            replayBtn.addEventListener('click', () => {
+                playSequence();
+            });
+        });
+    </script>
+</body>
+</html>

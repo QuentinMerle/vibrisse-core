@@ -1,0 +1,19 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "vibrisse/call-to-action",
+  "title": "Call To Action",
+  "description": "Bandeau de conversion. Focus unique sur une action.",
+  "category": "layout",
+  "icon": "megaphone",
+  "keywords": ["cta", "call to action", "conversion", "vibrisse"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php"
+  },
+  "supports": {
+    "align": ["wide", "full"],
+    "anchor": true,
+    "jsx": true
+  },
+  "style": "file:./style.css"
+}

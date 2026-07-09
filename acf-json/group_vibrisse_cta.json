@@ -1,0 +1,15 @@
+{
+    "key": "group_vibrisse_cta",
+    "title": "Block: Call To Action",
+    "fields": [
+        { "key": "field_vibrisse_cta_title", "label": "Titre", "name": "title", "type": "text", "required": 1, "wrapper": {"width": "70"} },
+        { "key": "field_vibrisse_cta_background_style", "label": "Style de fond", "name": "background_style", "type": "select", "choices": {"accent": "Accent (couleur principale)", "muted": "Muted (gris clair)", "dark": "Dark (fond sombre)"}, "default_value": "accent", "wrapper": {"width": "30"} },
+        { "key": "field_vibrisse_cta_description", "label": "Description courte", "name": "description", "type": "textarea", "rows": 2 },
+        { "key": "field_vibrisse_cta_label", "label": "Texte du bouton", "name": "cta_label", "type": "text", "required": 1, "wrapper": {"width": "50"} },
+        { "key": "field_vibrisse_cta_link", "label": "Lien du bouton", "name": "cta_link", "type": "url", "required": 1, "wrapper": {"width": "50"} }
+    ],
+    "location": [[{"param": "block", "operator": "==", "value": "vibrisse/call-to-action"}]],
+    "active": true,
+    "show_in_rest": 1,
+    "modified": 1720410200
+}

@@ -1,0 +1,20 @@
+{
+  "extends": ["stylelint-config-standard"],
+  "rules": {
+    "at-rule-no-unknown": [true, {
+      "ignoreAtRules": ["theme", "source", "layer", "tailwind", "apply", "config"]
+    }],
+    "no-descending-specificity": null,
+
+    "import-notation": "string",
+
+    "custom-property-pattern": [
+      "^([a-z][a-z0-9]*)(-+[a-z0-9]+)*$",
+      {
+        "message": "Autorise les custom properties WordPress (--wp--preset--*) et les propriétés kebab-case standard."
+      }
+    ],
+
+    "custom-property-empty-line-before": null
+  }
+}

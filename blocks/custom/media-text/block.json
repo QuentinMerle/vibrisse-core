@@ -1,0 +1,24 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "vibrisse/media-text",
+  "title": "Media & Text",
+  "description": "Un layout fractionné avec média d'un côté et texte de l'autre. Optmisé pour la génération IA via ACF.",
+  "category": "layout",
+  "icon": "align-pull-left",
+  "keywords": ["media", "text", "split", "vibrisse"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php"
+  },
+  "supports": {
+    "align": ["wide", "full"],
+    "anchor": true,
+    "jsx": true,
+    "color": {
+      "text": true,
+      "background": true,
+      "link": true
+    }
+  },
+  "style": "file:./style.css"
+}

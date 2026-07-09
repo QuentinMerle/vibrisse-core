@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+/*
+  CRITICAL: Tailwind v4 source scanning.
+  Without these directives, classes used in ACF block render.php files
+  would be purged in production and block styles would silently disappear.
+*/
+@source "../../blocks/**/*.php";
+@source "../../block-templates/**/*.html";
+@source "../../block-template-parts/**/*.html";
+
+/*
+  Tailwind v4 configuration
+  The theme is synchronized with the native tokens from theme.json
+*/
+@theme {
+  --color-base: var(--wp--preset--color--base);
+  --color-contrast: var(--wp--preset--color--contrast);
+  --color-muted: var(--wp--preset--color--muted);
+  --color-accent: var(--wp--preset--color--accent);
+
+  --font-sans: var(--wp--preset--font-family--sans);
+  --font-serif: var(--wp--preset--font-family--serif);
+}
+
+@layer base {
+  body {
+    @apply bg-base text-contrast font-sans;
+  }
+
+  /* Skip Navigation — Visible on keyboard focus only (A11y WCAG 2.1 AA) */
+  .vibrisse-skip-link {
+    position: absolute;
+    top: -100%;
+    left: 1rem;
+    z-index: 9999;
+    padding: 0.75rem 1.25rem;
+    background-color: var(--wp--preset--color--accent);
+    color: var(--wp--preset--color--base);
+    font-family: var(--wp--preset--font-family--sans);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 0 0 0.5rem 0.5rem;
+    transition: top 0.15s ease;
+  }
+
+  .vibrisse-skip-link:focus {
+    top: 0;
+    outline: 3px solid var(--wp--preset--color--contrast);
+    outline-offset: 2px;
+  }
+
+  /* Responsive images — sane default for all contexts */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}

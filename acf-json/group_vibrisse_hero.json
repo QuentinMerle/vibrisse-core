@@ -1,0 +1,16 @@
+{
+    "key": "group_vibrisse_hero",
+    "title": "Block: Hero",
+    "fields": [
+        { "key": "field_vibrisse_hero_title", "label": "Titre", "name": "title", "type": "text", "required": 1, "wrapper": {"width": "70"} },
+        { "key": "field_vibrisse_hero_layout", "label": "Layout", "name": "layout", "type": "select", "choices": {"centered": "Centré (image de fond)", "split": "Split (image à droite)"}, "default_value": "centered", "wrapper": {"width": "30"} },
+        { "key": "field_vibrisse_hero_subtitle", "label": "Sous-titre", "name": "subtitle", "type": "textarea", "rows": 2 },
+        { "key": "field_vibrisse_hero_media", "label": "Image", "name": "media", "type": "image", "return_format": "array", "wrapper": {"width": "50"} },
+        { "key": "field_vibrisse_hero_cta_label", "label": "Texte du bouton", "name": "cta_label", "type": "text", "wrapper": {"width": "25"} },
+        { "key": "field_vibrisse_hero_cta_link", "label": "Lien du bouton", "name": "cta_link", "type": "url", "wrapper": {"width": "25"} }
+    ],
+    "location": [[{"param": "block", "operator": "==", "value": "vibrisse/hero"}]],
+    "active": true,
+    "show_in_rest": 1,
+    "modified": 1720410000
+}

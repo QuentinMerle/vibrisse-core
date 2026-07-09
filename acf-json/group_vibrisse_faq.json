@@ -1,0 +1,23 @@
+{
+    "key": "group_vibrisse_faq",
+    "title": "Block: FAQ",
+    "fields": [
+        { "key": "field_vibrisse_faq_section_title", "label": "Titre de section", "name": "section_title", "type": "text" },
+        {
+            "key": "field_vibrisse_faq_items",
+            "label": "Questions / Réponses",
+            "name": "items",
+            "type": "repeater",
+            "layout": "block",
+            "button_label": "Ajouter une question",
+            "sub_fields": [
+                { "key": "field_vibrisse_faq_item_question", "label": "Question", "name": "question", "type": "text" },
+                { "key": "field_vibrisse_faq_item_answer", "label": "Réponse", "name": "answer", "type": "wysiwyg", "toolbar": "basic", "media_upload": 0 }
+            ]
+        }
+    ],
+    "location": [[{"param": "block", "operator": "==", "value": "vibrisse/faq"}]],
+    "active": true,
+    "show_in_rest": 1,
+    "modified": 1720410300
+}
