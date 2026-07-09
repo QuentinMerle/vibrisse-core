@@ -6,6 +6,14 @@ Agency WordPress starter theme. Built for a DA → Dev → Delivery workflow, no
 
 ## Philosophy
 
+### Don't change your habits. Let the AI adapt to them.
+
+The biggest friction point for agencies adopting AI is the time required to change established habits. When you are deep in production, you don't have time to step back and learn "Prompt Engineering".
+**Vibrisse Core reverses this dynamic.** The repository *is* the prompt. You don't have to learn how to talk to the AI; the `.ai/` folder natively educates the AI on *your* agency's standards.
+
+**Example prompt:**
+> *"I just opened vibrisse-core in my IDE. Read the .ai/ folder to understand the architecture, then analyze my current agency starter theme [attached/link] and propose a plan to adapt my habits into this new standard."*
+
 ### The Core is foundational. The child theme is business-specific.
 
 `vibrisse-core` is deliberately incomplete. That's its strength.
