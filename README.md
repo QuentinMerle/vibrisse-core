@@ -228,6 +228,11 @@ If the project requires a Headless architecture, `vibrisse-core` natively suppor
    → The WP REST API automatically exposes the page's parsed blocks and ACF data in the `vibrisse_blocks` field.
 3. Use the `export-headless` AI Skill to generate React/Vue components directly from your PHP blocks.
 
+```
+Trigger: "I need to export the Hero block to Next.js."
+```
+> *"Run the `export-headless` skill for the `vibrisse/hero` block. Generate a React TSX component using the same Tailwind classes and map the `vibrisse_blocks` REST API data to the component's props."*
+
 ---
 
 ### 9. Graphic redesign (existing client)
