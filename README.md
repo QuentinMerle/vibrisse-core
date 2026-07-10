@@ -332,7 +332,8 @@ vibrisse-core/
 │       ├── init-child-theme/   # Child theme scaffold
 │       ├── new-block/          # Block creation
 │       ├── new-cpt/            # Custom Post Type creation
-│       └── plugin-check/       # Plugin evaluation
+│       ├── plugin-check/       # Plugin evaluation
+│       └── export-headless/    # Headless component generation
 ├── acf-json/                   # ACF fields (committed — source of truth)
 ├── block-template-parts/       # Header, Footer FSE
 ├── block-templates/            # FSE page layouts
@@ -344,6 +345,7 @@ vibrisse-core/
 │   ├── acf.php                 # Auto-registration + Local JSON (parent + child)
 │   ├── assets.php              # Vite HMR / Production (auto-detected)
 │   ├── cli.php                 # WP-CLI commands (predeploy)
+│   ├── headless.php            # Headless mode API and redirections
 │   ├── performance.php         # Core WP cleanup
 │   ├── seo.php                 # JSON-LD, llms.txt, Open Graph
 │   └── setup.php               # Editor lock + skip nav
