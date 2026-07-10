@@ -95,6 +95,14 @@ npm run predeploy
 → Build + Lint + static llms.txt + SEO report + manual checklist
 ```
 
+### Entry E — Headless Mode
+```
+1. Enable VIBRISSE_HEADLESS_MODE in functions.php
+2. Define VIBRISSE_HEADLESS_FRONTEND_URL in wp-config.php
+3. Use Skill "export-headless" to convert blocks to React/Vue components
+→ WP REST API exposes vibrisse_blocks automatically.
+```
+
 ---
 
 ## 5. Available AI Skills
@@ -107,6 +115,7 @@ npm run predeploy
 | `new-block` | `.ai/skills/new-block/` | New block requirement |
 | `new-cpt` | `.ai/skills/new-cpt/` | New recurring content type (CPT + taxonomy) |
 | `plugin-check` | `.ai/skills/plugin-check/` | Identified functional requirement |
+| `export-headless` | `.ai/skills/export-headless/` | Need to convert a PHP block to a frontend component |
 
 ---
 

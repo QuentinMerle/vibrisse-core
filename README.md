@@ -218,7 +218,19 @@ Chains in order:
 
 ---
 
-### 8. Graphic redesign (existing client)
+### 8. Headless Mode (Next.js, Nuxt)
+
+If the project requires a Headless architecture, `vibrisse-core` natively supports it via the WordPress REST API, without additional plugins.
+
+1. Set `VIBRISSE_HEADLESS_MODE` to `true` in `functions.php`.
+2. Define `VIBRISSE_HEADLESS_FRONTEND_URL` in your `wp-config.php`.
+   → All frontend traffic is automatically redirected to this URL.
+   → The WP REST API automatically exposes the page's parsed blocks and ACF data in the `vibrisse_blocks` field.
+3. Use the `export-headless` AI Skill to generate React/Vue components directly from your PHP blocks.
+
+---
+
+### 9. Graphic redesign (existing client)
 
 ```
 1. Update .ai/CLIENT.md (new colors, new fonts)
@@ -266,6 +278,7 @@ Chains in order:
 | `new-block` | New block needed | Generates block with A11y/SEO/Perf quality contract |
 | `new-cpt` | New recurring content type | CPT + taxonomy + ACF + FSE templates |
 | `plugin-check` | Functional need identified | Evaluates plugin options |
+| `export-headless` | Headless mode only | Converts a PHP block to a React/Vue component |
 
 ---
 

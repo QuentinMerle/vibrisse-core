@@ -225,6 +225,15 @@ Create `vibrisse-[client]/templates/archive-[slug].html`:
 → theme.json + .ai/skills/client-voice/ are updated automatically.
 ```
 
+## Headless Mode (Next.js, Nuxt, Astro)
+
+If `VIBRISSE_HEADLESS_MODE` is set to `true` in `functions.php`:
+1. WordPress acts purely as a headless CMS.
+2. The frontend is automatically redirected to `VIBRISSE_HEADLESS_FRONTEND_URL` (defined in `wp-config.php`).
+3. The WP REST API automatically exposes the page's block structure and ACF data under the `vibrisse_blocks` property.
+
+To generate a frontend component for an ACF block, use the **`export-headless`** AI Skill. It will read the `block.json` and `render.php` and generate the equivalent React/Vue/Svelte component using the same Tailwind classes.
+
 ## Out of Scope
 - Content generation from the WordPress admin (→ see `experimental/`)
 - Page builders or complex React components

@@ -66,7 +66,7 @@ add_action( 'enqueue_block_editor_assets', function() {
  * Ajoute l'attribut type="module" pour les scripts chargés depuis Vite
  */
 add_filter( 'script_loader_tag', function( $tag, $handle, $src ) {
-	if ( in_array( $handle, ['vibrisse-vite-client', 'vibrisse-main'], true ) ) {
+	if ( in_array( $handle, ['vibrisse-vite-client', 'vibrisse-vite-client-editor', 'vibrisse-main'], true ) ) {
 		return '<script type="module" src="' . esc_url( $src ) . '"></script>';
 	}
 	return $tag;
